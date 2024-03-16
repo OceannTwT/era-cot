@@ -56,7 +56,7 @@ def parse_arguments():
         "--SC", default=False, type=bool, help="self consistency"
     )
     parser.add_argument(
-        '--answer_extracting_prompt', default='Therefore,the answer is', type=str
+        '--answer_extracting_prompt', default='The answer is', type=str
     )
     parsed_args = parser.parse_args()
     return parsed_args

@@ -6,7 +6,26 @@ This is the codebase of the paper: [ERA-CoT: Improving Chain-of-Thought through 
 
 ERA-CoT performs entity extraction on text and finds out all the explicit relationships mentioned in the text, gradually infers the possible implicit relationships involved between entities based on the explicit relationships, then scores and filters the reliability of these implicit relationships, and finally answers questions based on these entity relationships. 
 
-**We will release the code and instructions soon.**
+🔥 We are releasing the version 1.0 for running on Llama2 model.
+
+## How to Use
+
+Update your environment for the required dependency. 
+
+```shell
+pip install -r requirement.txt
+```
+
+Get your Llama2 weight on https://huggingface.co/meta-llama/Llama-2-7b-chat-hf/tree/main, set up on default directory: /root/llama-2-7b-chat-hf (You can change the dir on era-cot/config.py)
+
+Running the code:
+
+```shell
+python main.py --dataset gsm8k \
+--engine llama2-7b \
+--temperature 0.3
+```
+
 
 ## Citation
 
