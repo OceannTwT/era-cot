@@ -25,13 +25,39 @@ python main.py --dataset gsm8k \
 --temperature 0.3
 ```
 
+## Set up for your dataset
+
+* Upload your json version of dataset on era-cot/dataset.
+
+* Setting for loading your dataset on utils.
+
+### Example
+
+```shell
+if args.dataset.lower() == 'commonsenseqa':
+      json_res = decoder.raw_decode(line)[0]
+      choice = "Answer Choices:"
+      for c in json_res["question"]["choices"]:
+            choice += " ("
+            choice += c["label"]
+            choice += ") "
+            choice += c["text"]
+            q = json_res["question"]["stem"].strip() + " " + choice
+            a = json_res["answerKey"]
+            id = 'temp_{}'.format(idx)
+      questions.append(q)
+      answers.append(a)
+      ids.append(id)
+```
+
 ## Different Dataset Results
 
-ERA-CoT performs 
-✅entity extraction on text and finds out all the explicit relationships mentioned in the text
-✅gradually infers the possible implicit relationships involved between entities based on the explicit relationships
-✅scores and filters the reliability of these implicit relationships
-✅finally answers questions based on these entity relationships. 
+✨ERA-CoT
+
+* Entity extraction on text and finds out all the explicit relationships mentioned in the text.
+* Gradually infers the possible implicit relationships involved between entities based on the explicit relationships.
+* Scores and filters the reliability of these implicit relationships.
+* Finally answers questions based on these entity relationships. 
 
 ![Result](result.png)
 
@@ -48,3 +74,8 @@ If you ERA-CoT help your work, please cite:
       archivePrefix={arXiv},
       primaryClass={cs.CL}
 }
+
+```
+
+## License
+For academic and non-commercial use only.The whole project is under the CC-BY-NC 4.0 license. See [LICENSE](https://github.com/neuralchen/SimSwap/blob/main/LICENSE) for additional details.
