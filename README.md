@@ -78,4 +78,4 @@ If you ERA-CoT help your work, please cite:
 ```
 
 ## License
-For academic and non-commercial use only.The whole project is under the CC-BY-NC 4.0 license. See [LICENSE](https://github.com/neuralchen/SimSwap/blob/main/LICENSE) for additional details.
+For academic and non-commercial use only.The whole project is under the CC-BY-NC 4.0 license. See [LICENSE](https://creativecommons.org/licenses/by-nc-sa/4.0/) for additional details.
