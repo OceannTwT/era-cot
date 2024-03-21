@@ -72,13 +72,11 @@ if args.dataset.lower() == 'commonsenseqa':
 If you ERA-CoT help your work, please cite:
 
 ```bibtex 
-@misc{liu2024eracot,
-      title={ERA-CoT: Improving Chain-of-Thought through Entity Relationship Analysis}, 
-      author={Yanming Liu and Xinyue Peng and Tianyu Du and Jianwei Yin and Weihao Liu and Xuhong Zhang},
-      year={2024},
-      eprint={2403.06932},
-      archivePrefix={arXiv},
-      primaryClass={cs.CL}
+@article{liu2024era,
+  title={ERA-CoT: Improving Chain-of-Thought through Entity Relationship Analysis},
+  author={Liu, Yanming and Peng, Xinyue and Du, Tianyu and Yin, Jianwei and Liu, Weihao and Zhang, Xuhong},
+  journal={arXiv preprint arXiv:2403.06932},
+  year={2024}
 }
 
 ```
