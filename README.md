@@ -69,7 +69,7 @@ if args.dataset.lower() == 'commonsenseqa':
 
 ## Citation
 
-If you ERA-CoT help your work, please cite:
+If you found that ERA-CoT helps your work, please cite:
 
 ```bibtex 
 @article{liu2024era,
