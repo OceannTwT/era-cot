@@ -11,7 +11,9 @@ This is the codebase of the paper: [ERA-CoT: Improving Chain-of-Thought through 
 ![Framework of ERA-CoT](era-cot.png)
 
 
-🔥 We are releasing the version 1.0 for running on Llama2 model.
+[2024/05/17]🔥 We are happy to announce ERA-CoT has been accepted to ACL 2024 main conference!
+
+[2024/03/28]🔥 We are releasing the version 1.0 for running on Llama2 model.
 
 ## How to Use
 
