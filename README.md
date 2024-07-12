@@ -11,6 +11,8 @@ This is the codebase of the paper: [ERA-CoT: Improving Chain-of-Thought through 
 ![Framework of ERA-CoT](era-cot.png)
 
 
+[2024/07/12]🔥 We are releasing the version 1.1 for running on GPT3.5 model.
+
 [2024/05/17]🔥 We are happy to announce ERA-CoT has been accepted to ACL 2024 main conference!
 
 [2024/03/28]🔥 We are releasing the version 1.0 for running on Llama2 model.
@@ -25,12 +27,26 @@ pip install -r requirement.txt
 
 Get your Llama2 weight on https://huggingface.co/meta-llama/Llama-2-7b-chat-hf/tree/main, set up on default directory: /root/llama-2-7b-chat-hf (You can change the dir on era-cot/config.py)
 
-Running the code:
+Running the code on `Llama2`:
 
 ```shell
-python main.py --dataset gsm8k \
---engine llama2-7b \
---temperature 0.3
+export PYTHONPATH=./
+
+python main.py --dataset CommonsenseQA \
+    --engine llama2-7b \
+    --temperature 0.3 \
+```
+
+Running the code on `GPT3.5`:
+
+```shell
+export OPENAI_KEY=""
+export PYTHONPATH=./
+
+python main.py --dataset CommonsenseQA \
+    --engine gpt-3.5 \
+    --temperature 0.3 \
+    --api_key $OPENAI_KEY \
 ```
 
 ## Set up for your dataset

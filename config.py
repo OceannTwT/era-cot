@@ -23,7 +23,7 @@ def parse_arguments():
         "--temperature", type=float, default=0, help=""
     )
     parser.add_argument(
-        '--dataset', default='gsm8k',
+        '--dataset', default='CommonsenseQA',
         help="dataset",
         choices=["2WikimhQA", "GSM8K", "hotpotQA", "logiQA", "AddSub", "SingleEq", "CommonsenseQA", "StrategyQA"]
     )
@@ -34,14 +34,17 @@ def parse_arguments():
         "--datapath", default=None, type=str, help='file path'
     )
     parser.add_argument(
+        "--api_key", default="", type = str, help='gpt api_key'
+    )
+    parser.add_argument(
         "--prompt_id", default='324', help='string'
     )
     parser.add_argument(
         "--infer_num", default='5', help='string'
     )
     parser.add_argument(
-        "--engine", default='llama2-7b', help="llama2-7b, llama2-13b, llama-7b",
-        choices=["llama2-7b", "llama2-13b", "llama-7b"]
+        "--engine", default='llama2-7b', help="llama2-7b, llama2-13b, llama-7b, gpt-3.5",
+        choices=["llama2-7b", "llama2-13b", "llama-7b", "gpt-3.5"]
     )
     parser.add_argument(
         "--model_path", default='/root/llama-2-7b-chat-hf', help="your local model path"
