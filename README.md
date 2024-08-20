@@ -90,11 +90,25 @@ if args.dataset.lower() == 'commonsenseqa':
 If you found that ERA-CoT helps your work, please cite:
 
 ```bibtex 
-@article{liu2024era,
-  title={ERA-CoT: Improving Chain-of-Thought through Entity Relationship Analysis},
-  author={Liu, Yanming and Peng, Xinyue and Du, Tianyu and Yin, Jianwei and Liu, Weihao and Zhang, Xuhong},
-  journal={arXiv preprint arXiv:2403.06932},
-  year={2024}
+@inproceedings{liu-etal-2024-era,
+    title = "{ERA}-{C}o{T}: Improving Chain-of-Thought through Entity Relationship Analysis",
+    author = "Liu, Yanming  and
+      Peng, Xinyue  and
+      Du, Tianyu  and
+      Yin, Jianwei  and
+      Liu, Weihao  and
+      Zhang, Xuhong",
+    editor = "Ku, Lun-Wei  and
+      Martins, Andre  and
+      Srikumar, Vivek",
+    booktitle = "Proceedings of the 62nd Annual Meeting of the Association for Computational Linguistics (Volume 1: Long Papers)",
+    month = aug,
+    year = "2024",
+    address = "Bangkok, Thailand",
+    publisher = "Association for Computational Linguistics",
+    url = "https://aclanthology.org/2024.acl-long.476",
+    pages = "8780--8794",
+    abstract = "Large language models (LLMs) have achieved commendable accomplishments in various natural language processing tasks. However, LLMs still encounter significant challenges when dealing with complex scenarios involving multiple entities. These challenges arise from the presence of implicit relationships that demand multi-step reasoning. In this paper, we propose a novel approach ERA-CoT, which aids LLMs in understanding context by capturing relationships between entities and supports the reasoning of diverse tasks through Chain-of-Thoughts (CoT).Experimental results show that ERA-CoT demonstrates the superior performance of our proposed method compared to current CoT prompting methods, achieving a significant improvement of an average of 5.1{\%} on GPT3.5 compared to previous SOTA baselines. Our analysis indicates that ERA-CoT increases the LLM{'}s understanding of entity relationships, significantly improves the accuracy of question answering, and enhances the reasoning ability of LLMs.",
 }
 
 ```
