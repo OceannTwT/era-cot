@@ -6,7 +6,7 @@
 <img src='https://img.shields.io/badge/Data%20License-CC%20By%20NC%204.0-red.svg'>
 </p>
 
-This is the codebase of the paper: [ERA-CoT: Improving Chain-of-Thought through Entity Relationship Analysis](https://arxiv.org/abs/2403.06932).
+This is the codebase of the paper: [ERA-CoT: Improving Chain-of-Thought through Entity Relationship Analysis](https://aclanthology.org/2024.acl-long.476.pdf).
 
 ![Framework of ERA-CoT](era-cot.png)
 
