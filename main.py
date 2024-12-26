@@ -3,6 +3,7 @@ import logging
 import re
 
 from config import args
+from tqdm import tqdm
 from utils import write_json, print_now, load_data, print_exp, mkpath
 from src.format.entity_extraction_prompt import get_ner_list, get_ner_prompt, ner_sentence
 from src.model.llama2_predict import predict, model_init
@@ -10,6 +11,7 @@ from src.format.relation_extract import get_extract_prompt
 from src.format.relation_infer import get_infer_prompt
 from src.format.discrimination import get_discrimination_prompt
 from src.format.qa import get_qa_prompt
+from src.format.formulate import get_formulate_prompt
 from src.model.GPTFactory.GPTFactory import GPTFactory
 from transformers import LlamaTokenizer, LlamaForCausalLM, AutoConfig
 
@@ -46,7 +48,7 @@ def run_gpt():
     question, answer, ids = load_data(args)
     gpt_interface = GPTFactory("gpt-3.5-turbo", args.api_key)
     # model, tokenizer, device = model_init(args)
-    for idx, element in enumerate(question):
+    for idx, element in tqdm(enumerate(question)):
         prompt = ner_sentence(ner_prompt, element)
         gpt_interface.add_user_conv(prompt)
         entities = gpt_interface.predict()
@@ -81,7 +83,13 @@ def run_gpt():
         gpt_interface.add_user_conv(prompt)
         answer = gpt_interface.predict()
         gpt_interface.clear_conv()
-        print(answer)
+        prompt = get_formulate_prompt(answer)
+        # print(prompt)
+        gpt_interface.add_user_conv(prompt)
+        answer = gpt_interface.predict()
+        gpt_interface.clear_conv()
+        with open("./output.txt", "a", encoding="UTF-8") as f:
+            f.write(answer + '\n')
 
 if __name__ == '__main__':
     print_exp(args) 
